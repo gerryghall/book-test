@@ -15,7 +15,7 @@ to install this Book Store, please clone the following git repository to your lo
 docker build -t bookstore .
 ```
 
-Please alter the port as to suit your environment.
+Please alter the port to suit your environment.
 
 ```bash
 docker run -p 80:80 -d -v /home/docker/bookstore/www:/var/www/bookstore -v bookstore
@@ -26,7 +26,7 @@ Silex is a microframework for PHP, built on Symfony and Pimple and due to the ve
 
 **Setup**
 
-As a developer I have all .dev redirected to a local server so please not the Docker file and other provisioning assumes you have
+I have all **.dev** redirected to a local server so please not the Docker file and other provisioning assumes you have
  also redirected all **.dev** to your developement server also..
 
 **How To Use**
@@ -82,15 +82,12 @@ curl -X "POST" "http://bookstore.dev/api/books/create/" \
 
 **Improvements**
 
-1) Currently Books are converted into a stdClass which in turn can and will causes issues. 
-2) On Validation or sanitation is connected one assumes a fully trusted and educated user base.  
-this is because to render a book we need access to the protected properties, and to speed to creation
-tests and code can call a Json serialised Object.
-2) API document is flaky to see the least.
-3) Unit test coverage is about 80% off the top of my head, however there is not direct test for the BookFilter Iterator,
-and on test for the API end point itself, **Silex** is equipped with it's own tests so these should be added with the composer
+1) Currently Books are being converted between books, stdClass's and arrays. 
+2) No Validation or sanitation one assumes a fully trusted and educated user base.  
+3) API document is flaky to say the least.
+4) Unit test coverage is low, **Silex** is equipped with it's own tests so these should be added with the composer.
 autoload.
-4) Finish documentation normally I would never commit code without documentation by the request and the time versus effort retarded
-some commenting and doc blocks.
+4) Finish documentation normally I would never commit code without documentation, however the request, times, time versus effort, 
+has retarded some commenting and doc blocks.
 
 5) Application structure should have micro service independence's e.g Dockerfile.  
