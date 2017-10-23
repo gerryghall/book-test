@@ -112,6 +112,20 @@ $app->post('/api/books/create/', function (Request $request) use ($app, $library
     return $app->json($response, 201);
 });
 
+$app->post('/api/books/reset/', function (Request $request) use ($app, $provider) {
+
+    try {
+
+        $provider::reset();
+    } catch (\Exception $e) {
+        $response = Error::init("General Error", $e->getMessage(), $e->getCode());
+        return $app->json($response, 400);
+    }
+
+
+    return $app->json($response, 201);
+});
+
 
 $app->run();
 

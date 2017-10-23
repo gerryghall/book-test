@@ -17,7 +17,7 @@ class JsonProvider {
     private static $instance;
 
     private function __construct() {
-        static::$file = dirname(dirname(dirname(__FILE__))) . "/data/books.json";
+        static::$file = dirname(dirname(dirname(__FILE__))) . "/data/books";
     }
 
     public final static function instance()
