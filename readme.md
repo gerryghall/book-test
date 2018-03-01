@@ -1,12 +1,10 @@
 #`Gerry's Book Store`
 
 Basic API for a factitious BookStore.
-
      * 
      * Please note there are area's within this code that purposely alters book data between an array, stdClass and Book Objects
      * this is to mimic Legacy code I have previouly worked with.
      *
-
 **How To Install**
 
 to install this Book Store, please clone the following git repository to your local computer and the run the following commands.
@@ -14,13 +12,9 @@ to install this Book Store, please clone the following git repository to your lo
 ```bash
 docker build -t bookstore .
 ```
-
-Please alter the port to suit your environment.
-
 ```bash
 docker run -p 80:80 -d -v /home/docker/bookstore/www:/var/www/bookstore -v bookstore
 ```
-
 this API relies on Silex and has been pree installed.
 Silex is a microframework for PHP, built on Symfony and Pimple and due to the very nature of this framework it very loosely coupled.
 
@@ -30,7 +24,6 @@ I have all **.dev** redirected to a local server so please not the Docker file a
  also redirected all **.dev** to your developement server also..
 
 **How To Use**
-
 
 
 **Create Books**
